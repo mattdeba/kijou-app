@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DataViewModule } from 'primeng/dataview';
 import {RatingModule} from "primeng/rating";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {TagModule} from "primeng/tag";
 import {ButtonModule} from "primeng/button";
 import { TableRowEditComponent } from './table-row-edit/table-row-edit.component';
@@ -39,7 +39,8 @@ import {HttpClientModule} from "@angular/common/http";
     RippleModule,
     InputTextModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]

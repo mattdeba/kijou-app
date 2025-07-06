@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {forkJoin} from "rxjs";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-dropdown-selection',
@@ -10,6 +11,7 @@ import {forkJoin} from "rxjs";
 export class DropdownSelectionComponent {
   evenement: any;
   choices: any;
+  choiceControl!: FormControl;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -19,9 +21,9 @@ export class DropdownSelectionComponent {
       choices: this.httpClient.get('http://localhost:3000/choices'),
       evenement: this.httpClient.get('http://localhost:3000/events/1')
     }).subscribe(({ choices, evenement }: any) => {
-      this.choices = choices;
-      evenement.participation = evenement.participations[0];
       this.evenement = evenement;
+      this.choices = choices;
+      this.choiceControl = new FormControl<any>(evenement.participations[0].choice)
     });
   }
 
