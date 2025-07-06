@@ -1,0 +1,7 @@
+<p-dropdown *ngIf="evenement"
+  [options]="choices"
+  [(ngModel)]="evenement.participation.choice"
+  optionLabel="libelle"
+  placeholder="Choisir une participation"
+  (ngModelChange)="onParticipationChange($event)">
+</p-dropdown>

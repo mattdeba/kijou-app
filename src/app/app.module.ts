@@ -16,11 +16,14 @@ import {ProductService} from "./service/productservice";
 import {RippleModule} from "primeng/ripple";
 import {InputTextModule} from "primeng/inputtext";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { DropdownSelectionComponent } from './dropdown-selection/dropdown-selection.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
     AppComponent,
     TableRowEditComponent,
+    DropdownSelectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ToastModule,
     RippleModule,
     InputTextModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
