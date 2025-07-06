@@ -9,21 +9,7 @@ import {forkJoin} from "rxjs";
 })
 export class DropdownSelectionComponent {
   evenement: any;
-
-  choices = [
-    {
-    id: 1,
-    libelle: "en attente"
-    },
-    {
-      id: 2,
-      libelle: "présent"
-    },
-    {
-      id: 3,
-      libelle: "absent"
-    }
-    ]
+  choices: any;
 
   constructor(private httpClient: HttpClient) {
   }
